@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/HomePage/Carousel2.css"],"names":[],"mappings":"AAAA,aACE,eAAiB,CACjB,qBACF,CAEA,YACE,eACF","file":"7.739992b9.chunk.css","sourcesContent":[".slick-slide {\r\n  padding: 0 0.5rem;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.slick-list {\r\n  margin: 0 -0.5rem;\r\n}"]}
