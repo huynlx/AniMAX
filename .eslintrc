@@ -1,0 +1,19 @@
+{
+    "parser": "@typescript-eslint/parser", // => must have
+    "plugins": [ // => plugin
+        "@typescript-eslint",
+        "react",
+        "react-hooks"
+    ],
+    "extends": [ // => enable all the recommended rules
+        // "eslint:recommended",
+        // "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": { // => "on" ("error", "warn") or "off" for rules
+        // "@typescript-eslint/no-unused-vars": "off",
+        // "no-unused-vars": "off",
+        // "no-var": "off",
+        // "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
+        // "@typescript-eslint/no-explicit-any":"off"
+    }
+}
