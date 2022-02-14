@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { ImSpinner3 } from 'react-icons/im';
 import useInfiniteScroll from "react-infinite-scroll-hook";
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import useBrowseList from '../apis/useBrowseList';
 import AnimeCard from '../components/BrowserPage/AnimeCard';
 import Select from '../components/BrowserPage/Select';
@@ -18,12 +18,17 @@ const Browse = () => {
     const dispatch = useDispatch();
     const selectSort = useSelector((state: RootState) => state.sort);
 
+    const [total, setTotal] = useState('');
     const [selectedSorting, setSelectedSorting] = useState(SORTS[selectSort.index].slug);
     const { pathname } = useLocation();
+    var x = (useParams());
+    const [xslug, setXslug] = useState({});
 
     const [category, ...slug] = pathname.replace("/", "").split("/");
 
     const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } = useBrowseList({ category, sort: selectedSorting, slug: slug.join("/") });
+
+    const totalAnime = `${data?.pages[0].total ? '(' + data?.pages[0].total[0] + ')' : ''}`;
 
     const [sentryRef] = useInfiniteScroll({
         loading: isFetchingNextPage,
@@ -41,18 +46,49 @@ const Browse = () => {
 
     const current = ALL.find((type) => pathname.includes(type.slug)); //lọc ra cái nào có slug nằm trong pathname
 
-    const list = data?.pages.map((list) => list.data).flat(); //lọc ra mảng data
+    const list = data?.pages.map((list) => list.data).flat(); //gộp các mảng page thành 1 mảng data
 
     useEffect(() => {
         document.title = "Browser - AniMAX"
     }, [])
+
+    useEffect(() => {
+        if (total === '') {
+            setXslug(x);
+            setTotal(totalAnime);
+        } else {
+            if (x !== xslug) {
+                setXslug(x);
+                setTotal(totalAnime);
+            }
+        }
+    }, [totalAnime, x])
+
+    const pgTitle = () => {
+        if (!current?.name) {
+            if (pathname.includes('seasons')) {
+                const convert: any = {
+                    winter: 'Mùa Đông',
+                    spring: 'Mùa Xuân',
+                    summer: 'Mùa Hạ',
+                    autumn: 'Mùa Thu'
+                }
+                return convert[slug[0]] + ' ' + slug[1] + ` ${total}`
+            }
+            return `KẾT QUẢ TÌM KIẾM: \xa0'${decodeURI(slug[0].toUpperCase())}'`;
+        } else {
+            return current?.name + ` ${total}`
+        }
+    };
 
     return (
         <>
             <div className="w-full">
                 <div className="w-full p-2">
                     <div className="flex items-center justify-between">
-                        <p className="text-white font-bold text-3xl">{!current?.name ? `KẾT QUẢ TÌM KIẾM: \xa0'${decodeURI(slug[0].toUpperCase())}'` : current?.name}</p>
+                        {
+                            <p className="text-white font-bold text-3xl">{pgTitle()}</p>
+                        }
                         <Select value={selectedSorting} onChange={handleSortingSelectChange} className='bg-black'>
                             {
                                 SORTS.map(sort => (

@@ -45,6 +45,7 @@ interface GetListResponse {
         totalPage: number;
         currentPage: number;
     };
+    total: any
 }
 
 export const getList = async ({ category, slug, ...rest }: GetListData): Promise<GetListResponse> => {
