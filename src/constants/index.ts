@@ -1,4 +1,5 @@
-export const API_URL = 'http://localhost:7000/api/v1';
+// export const API_URL = 'http://localhost:7000/api/v1';
+export const API_URL = 'http://0453-1-54-213-121.ngrok.io/api/v1';
 
 export const TYPES = [
     { name: 'TV/Series', slug: 'anime-bo' },

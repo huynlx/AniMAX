@@ -66,7 +66,7 @@ module.exports = {
     },
   },
   plugins: [
-    // require("@tailwindcss/line-clamp") => lỗi vãi lồn
+    require("@tailwindcss/line-clamp") 
   ],
   mode: 'jit',
 }
