@@ -18,7 +18,7 @@ AniMAX is a website to watch anime with vietnamese subtitle, built with React an
   - [Nodejs](https://github.com/nodejs), [Express](https://github.com/expressjs/express)
   - Libraries: [Cheerio](https://github.com/cheeriojs/cheerio)
 
-## Setup
+## Clone
 
 To run this project, install it locally using npm (or yarn):
 
@@ -29,7 +29,7 @@ yarn start
 
 Change API_URL in `src/constants.ts` to let the project works properly
 
-## Example
+## Preview
 
 Here is some screenshots to show how the website would looks like.
 
