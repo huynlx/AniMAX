@@ -12,11 +12,11 @@ AniMAX is a website to watch anime with vietnamese subtitle, built with React an
 
 - Front-end:
   - [React](https://github.com/facebook/react), [Tailwind](https://github.com/tailwindlabs/tailwindcss)
-    , Typescript
-  - Libraries: [React Query](https://github.com/tannerlinsley/react-query), [React Slick](https://github.com/akiran/react-slick), [Plyr](https://github.com/sampotts/plyr)
+    , [Typescript](https://www.typescriptlang.org/)
+  - [React Query](https://github.com/tannerlinsley/react-query), [React Slick](https://github.com/akiran/react-slick), [Plyr](https://github.com/sampotts/plyr)
 - Back-end:
   - [Nodejs](https://github.com/nodejs), [Express](https://github.com/expressjs/express)
-  - Libraries: [Cheerio](https://github.com/cheeriojs/cheerio)
+  - [Cheerio](https://github.com/cheeriojs/cheerio)
 
 ## Clone
 
