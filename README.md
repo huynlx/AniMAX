@@ -1,4 +1,4 @@
-# Netime
+# AniMAX
 
 AniMAX is a website to watch anime with vietnamese subtitle, built with React and Tailwind.
 
