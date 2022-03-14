@@ -50,7 +50,7 @@ interface GetListResponse {
 
 export const getList = async ({ category, slug, ...rest }: GetListData): Promise<GetListResponse> => {
     const { data } = await instance.get(`/${category}/${slug}`, {
-        params: rest,
+        params: rest, //pass query
     });
 
     return data;

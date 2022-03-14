@@ -37,5 +37,3 @@ Here is some screenshots to show how the website would looks like.
 ![info](https://i.ibb.co/xm6H15n/Annotation-2022-03-02-222323.png)
 ![watchscreen](https://i.ibb.co/jgXfNS5/Annotation-2022-03-02-222215.png)
 ![browse](https://i.ibb.co/2tLNF5B/Annotation-2022-03-02-222016.png)
-
-Or here is [live demo](https://animax-huynh.cf/)
